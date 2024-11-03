@@ -26,11 +26,11 @@
             get { return _name; }
             set
             {
-                if (value.Length > 50)
+                if (value.Length > 0 && value.Length <= 50)
                 {
-                    throw new ArgumentException("Name should be less than equal to 50");
+                    _name = value;
                 }
-                _name = value;
+
             }
         }
 
@@ -39,11 +39,10 @@
             get { return _age; }
             set
             {
-                if (value < 10 || value > 65)
+                if (value >= 10 && value <= 65)
                 {
-                    throw new ArgumentException("Age should be between 10 and 65");
+                    _age = value;
                 }
-                _age = value;
             }
         }
 
@@ -52,11 +51,10 @@
             get { return _university; }
             set
             {
-                if (value.Length > 250 || !value.Contains("University"))
+                if (value.Length > 0 && value.Length <= 250 && value.Contains("University"))
                 {
-                    throw new ArgumentException("University should be less than equal to 250 and have expression 'University'");
+                    _university = value;
                 }
-                _university = value;
             }
         }
 
