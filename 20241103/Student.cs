@@ -10,9 +10,13 @@
         {
         }
 
-        internal Student(string name, int age, string university, Group group)
+        internal Student(string name)
         {
             Name = name;
+        }
+
+        internal Student(string name, int age, string university, Group group) : this(name)
+        {
             Age = age;
             Group = group;
             University = university;
