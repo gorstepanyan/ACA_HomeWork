@@ -2,14 +2,12 @@
 {
     internal class Student
     {
-        private string _name;
+        private string? _name;
         private int _age;
-        private string _university;
-        private Group _group;
+        private string? _university;
 
         public Student()
         {
-
         }
 
         public Student(string name, int age, string university, Group group)
@@ -21,12 +19,12 @@
         }
 
 
-        internal string Name
+        internal string? Name
         {
             get { return _name; }
             set
             {
-                if (value.Length > 0 && value.Length <= 50)
+                if (value?.Length > 0 && value?.Length <= 50)
                 {
                     _name = value;
                 }
@@ -46,12 +44,12 @@
             }
         }
 
-        internal string University
+        internal string? University
         {
             get { return _university; }
             set
             {
-                if (value.Length > 0 && value.Length <= 250 && value.Contains("University"))
+                if (value?.Length > 0 && value?.Length <= 250 && value.Contains("University"))
                 {
                     _university = value;
                 }
@@ -62,7 +60,7 @@
 
         public string GetStudentInfo()
         {
-            return $"Student {_name} is {_age} yo, he is studying in {_university} at the {Group.ToString().ToLower()} group.";
+            return $"Student {Name} is {Age} yo, he is studying in {University} at the {Group.ToString().ToLower()} group.";
         }
 
     }
