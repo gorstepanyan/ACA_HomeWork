@@ -6,11 +6,11 @@
         private int _age;
         private string? _university;
 
-        public Student()
+        internal Student()
         {
         }
 
-        public Student(string name, int age, string university, Group group)
+        internal Student(string name, int age, string university, Group group)
         {
             Name = name;
             Age = age;
